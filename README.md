@@ -1,6 +1,6 @@
 # Description
 
-This repository is meant to serve as a general template for how to set up new repositories in the JogetOSS organization. 
+This unique form validator plugin allows a maximum of 5 form validator plugins to be configured for a form element.
 
 # Getting Help
 
