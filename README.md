@@ -2,6 +2,8 @@
 
 This unique form validator plugin allows a maximum of 5 form validator plugins to be configured for a form element.
 
+Do see [documentation](https://dev.joget.org/community/display/marketplace/Multi+Form+Validator+Plugin).
+
 # Getting Help
 
 JogetOSS is a community-led team for open source software related to the [Joget](https://www.joget.org) no-code/low-code application platform.
