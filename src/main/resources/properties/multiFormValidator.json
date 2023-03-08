@@ -10,12 +10,48 @@
             "default_property_values_url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getDefaultProperties"
         },
         {
+            "name": "isReverse1",
+            "label": "@@form.multiFormValidator.isReverse@@",
+            "type": "checkbox",
+            "control_field": "firstValidator",
+            "control_value": "^.+$",
+            "control_use_regex": "true",
+            "options": [
+                {"value": "true", "label": ""}
+            ]
+        },
+        {
+            "name": "errorValidatorMsg1",
+            "label": "@@form.multiFormValidator.errorValidator@@",
+            "type": "textfield",
+            "control_field": "isReverse1",
+            "control_value": "true"
+        },
+        {
             "name": "secondValidator",
             "label": "@@form.multiFormValidator.secondValidator@@",
             "type": "elementselect",
             "options_ajax": "[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.form.model.FormValidator",
             "url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions",
             "default_property_values_url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getDefaultProperties"
+        },
+        {
+            "name": "isReverse2",
+            "label": "@@form.multiFormValidator.isReverse@@",
+            "type": "checkbox",
+            "control_field": "secondValidator",
+            "control_value": "^.+$",
+            "control_use_regex": "true",
+            "options": [
+                {"value": "true", "label": ""}
+            ]
+        },
+        {
+            "name": "errorValidatorMsg2",
+            "label": "@@form.multiFormValidator.errorValidator@@",
+            "type": "textfield",
+            "control_field": "isReverse2",
+            "control_value": "true"
         },
         {
             "name": "thirdValidator",
@@ -26,6 +62,24 @@
             "default_property_values_url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getDefaultProperties"
         },
         {
+            "name": "isReverse3",
+            "label": "@@form.multiFormValidator.isReverse@@",
+            "type": "checkbox",
+            "control_field": "thirdValidator",
+            "control_value": "^.+$",
+            "control_use_regex": "true",
+            "options": [
+                {"value": "true", "label": ""}
+            ]
+        },
+        {
+            "name": "errorValidatorMsg3",
+            "label": "@@form.multiFormValidator.errorValidator@@",
+            "type": "textfield",
+            "control_field": "isReverse3",
+            "control_value": "true"
+        },
+        {
             "name": "fourthValidator",
             "label": "@@form.multiFormValidator.fourthValidator@@",
             "type": "elementselect",
@@ -34,12 +88,48 @@
             "default_property_values_url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getDefaultProperties"
         },
         {
+            "name": "isReverse4",
+            "label": "@@form.multiFormValidator.isReverse@@",
+            "type": "checkbox",
+            "control_field": "fourthValidator",
+            "control_value": "^.+$",
+            "control_use_regex": "true",
+            "options": [
+                {"value": "true", "label": ""}
+            ]
+        },
+        {
+            "name": "errorValidatorMsg4",
+            "label": "@@form.multiFormValidator.errorValidator@@",
+            "type": "textfield",
+            "control_field": "isReverse4",
+            "control_value": "true"
+        },
+        {
             "name": "fifthValidator",
             "label": "@@form.multiFormValidator.fifthValidator@@",
             "type": "elementselect",
             "options_ajax": "[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.form.model.FormValidator",
             "url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions",
             "default_property_values_url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getDefaultProperties"
+        },
+        {
+            "name": "isReverse5",
+            "label": "@@form.multiFormValidator.isReverse@@",
+            "type": "checkbox",
+            "control_field": "fifthValidator",
+            "control_value": "^.+$",
+            "control_use_regex": "true",
+            "options": [
+                {"value": "true", "label": ""}
+            ]
+        },
+        {
+            "name": "errorValidatorMsg5",
+            "label": "@@form.multiFormValidator.errorValidator@@",
+            "type": "textfield",
+            "control_field": "isReverse5",
+            "control_value": "true"
         }
     ]
 }]

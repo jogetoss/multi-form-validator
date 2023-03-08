@@ -6,6 +6,7 @@ import org.joget.apps.app.service.AppUtil;
 import org.joget.apps.form.model.Element;
 import org.joget.apps.form.model.FormData;
 import org.joget.apps.form.model.FormValidator;
+import org.joget.apps.form.service.FormUtil;
 import org.joget.plugin.base.PluginManager;
 import org.joget.plugin.property.model.PropertyEditable;
 
@@ -18,7 +19,7 @@ public class MultiFormValidator extends FormValidator {
 
     @Override
     public String getVersion() {
-        return "7.0.0";
+        return "7.0.1";
     }
 
     @Override
@@ -51,7 +52,17 @@ public class MultiFormValidator extends FormValidator {
         String[] validatorList = new String[]{"firstValidator","secondValidator","thirdValidator","fourthValidator","fifthValidator"};
         boolean validatorResult = false;
         
+        int count = 0;
+        String isReverse = null;
+        String errorValidatorMsg = null;
+        String id = FormUtil.getElementParameterName(element);
+        Map<String, String> errors = data.getFormErrors();
+        
         for (String validatorPropertyName : validatorList) {
+            count++;
+            isReverse = (String) getPropertyString("isReverse" + count);
+            errorValidatorMsg = (String) getPropertyString("errorValidatorMsg" + count);
+            
             Object objValidator = getProperty(validatorPropertyName);
             PluginManager pluginManager = (PluginManager) AppUtil.getApplicationContext().getBean("pluginManager");
             if (objValidator != null && objValidator instanceof Map) {
@@ -67,6 +78,17 @@ public class MultiFormValidator extends FormValidator {
                         ((PropertyEditable) appPlugin).setProperties(propertiesMap);
                     }
                     validatorResult = appPlugin.validate(element, data, values);
+                    
+                    // Check if reverse is selected
+                    if (isReverse.equals("true")) {
+                        if (!validatorResult) {
+                            validatorResult = !validatorResult;
+                            errors.remove(id);
+                        } else {
+                            validatorResult = !validatorResult;
+                            data.addFormError(id, errorValidatorMsg);
+                        }
+                    }
                 }
             }
 
